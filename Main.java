@@ -26,6 +26,12 @@ public class Main {
         System.out.println("\nShortest Job First (SJF)");
         SJF.schedule(new ArrayList<>(processes));
 
-        
+        // 4) Round Robin (quantum = 2)
+        System.out.println("\nRound Robin (Quantum = 2)");
+        RoundRobin.schedule(new ArrayList<>(processes), 2);
+
+        // 5) Priority (non-preemptive)
+        System.out.println("\nPriority Scheduling");
+        PriorityScheduling.schedule(new ArrayList<>(processes));
     }
 }
