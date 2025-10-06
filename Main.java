@@ -33,5 +33,20 @@ public class Main {
         // 5) Priority (non-preemptive)
         System.out.println("\nPriority Scheduling");
         PriorityScheduling.schedule(new ArrayList<>(processes));
+
+         // 6) Memory allocation demos
+        int[] memoryBlocks = {100, 500, 200, 300, 600}; // KB
+        int[] processSizes = {212, 417, 112, 426};      // KB
+
+        MemoryManagement.firstFit(memoryBlocks.clone(), processSizes); // clone to preserve original blocks
+        MemoryManagement.bestFit(memoryBlocks.clone(), processSizes);
+        MemoryManagement.worstFit(memoryBlocks.clone(), processSizes);
+
+        // 7) Page replacement demos
+        int[] pages  = {1, 3, 0, 3, 5, 6, 3};
+        int   frames = 3;
+
+        PageReplacement.fifo(pages, frames);
+        PageReplacement.lru(pages, frames);
     }
 }
